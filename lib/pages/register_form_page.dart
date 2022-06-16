@@ -129,9 +129,9 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                 FilteringTextInputFormatter(RegExp(r'^[()\d -]{1,15}$'),
                     allow: true),
               ],
-              // validator: (value) => _validatePhoneNumber(value!)
-              //     ? null
-              //     : 'Формат номера телефона (###)###-####',
+              validator: (value) => _validatePhoneNumber(value!)
+                  ? null
+                  : 'Формат номера телефона (###)###-####',
               onSaved: (value) => newUser.phone = value as String,
             ),
 
@@ -146,7 +146,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                 icon: Icon(Icons.mail),
               ),
               keyboardType: TextInputType.emailAddress,
-              // validator: _validateEmail,
+              validator: _validateEmail,
               onSaved: (value) => newUser.email = value!,
             ),
 
